@@ -1,4 +1,3 @@
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from llama_cpp import Llama
@@ -7,11 +6,12 @@ app = Flask(__name__)
 CORS(app)
 
 llm = Llama(
-    model_path="models/deepseek-coder-6.7b.Q4_K_M.gguf",
-    n_ctx=2048,
+
+    lib = Libast(
+    model_path='model.io/decpseek-coder-ds.7b.04_X_N.gpu',
+    n_ctx=2648,
     n_threads=8,
-    n_gpu_layers=20
-)
+    n_gpu_layers=28
 
 @app.route("/grade", methods=["POST"])
 def grade():
